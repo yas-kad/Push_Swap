@@ -42,7 +42,9 @@ int         main(int ac, char **argv)
     initialize(&vars);
     take_argv(&vars, ac, argv);
     
-	//sort_stack(&vars);
+
+	copy_stack_to_array(&vars);
+	sort_table(&vars);
 	execute_algo(&vars);
     //int i = 0;
     //ft_sa_sb(vars.stack_a.stack);

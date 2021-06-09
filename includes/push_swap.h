@@ -31,19 +31,27 @@ typedef struct  push_swap
 {
     t_stack     stack_a;
     t_stack     stack_b;
-	int			*tab_sort;
+	int			*sorted_tab;
+	int			tab_size;
 }               t_push;
 
 
 void		put_err_and_exit();
+
 void		ft_sa_sb(int *stack);
 void		ft_ra(t_stack *stack_a);
 void		ft_rra(t_stack *stack_a);
+void		ft_pa(t_stack *stack_a, t_stack *stack_b);
+
 int			check_error(char **argv);
 int			check_double(char **argv);
-void		execute_algo(t_push *vars);
 int			already_sorted(char **str);
-void		sort_stack(t_push *var);
-void		ft_pa(t_stack *stack_a, t_stack *stack_b);
+
+void		execute_algo(t_push *vars);
+void		algo_under10(t_push *var);
+void		algo_under100(t_push *var);
+
+void		sort_table(t_push *vars);
+void		copy_stack_to_array(t_push *var);
 
 #endif

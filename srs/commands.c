@@ -27,33 +27,33 @@ void        ft_ss(int *stack_a, int *stack_b)
     ft_sa_sb(stack_b);
 }
 
-void        ft_pa(t_stack *stack_a, t_stack *stack_b)
+void        ft_pa(t_stack *stack_dest, t_stack *stack_src)
 {
-    if (stack_b->size > 0)
+    if (stack_src->size > 0)
     {
         int i;
         int num;
         int size;
 
         i = 0;
-        num = stack_b->stack[0];
-        size = stack_a->size;
+        num = stack_src->stack[0];
+        size = stack_dest->size;
         while (size > 0)
         {
             // if (size == 0)
-            //     stack_a.stack[size] = num;
+            //     stack_dest.stack[size] = num;
             // else
-            stack_a->stack[size] = stack_a->stack[size - 1];
+            stack_dest->stack[size] = stack_dest->stack[size - 1];
             size--;
         }
-        stack_a->stack[0] = num;
-        stack_a->size++;
-        while (i < stack_b->size)
+        stack_dest->stack[0] = num;
+        stack_dest->size++;
+        while (i < stack_src->size)
         {
-            stack_b->stack[i] = stack_b->stack[i + 1];
+            stack_src->stack[i] = stack_src->stack[i + 1];
             i++;
         }
-        stack_b->size--;
+        stack_src->size--;
     }
     else
         put_err_and_exit();
