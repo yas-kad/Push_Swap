@@ -18,4 +18,6 @@ void		execute_algo(t_push *vars)
 		algo_under10(vars);
 	if (vars->stack_a.size > 10 && vars->stack_a.size <= 100)
 		algo_under100(vars);
+	if (vars->stack_a.size > 100)
+		algo_above100(vars);
 }

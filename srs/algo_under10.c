@@ -17,7 +17,8 @@ int			get_min_num(int size, int *stack, int *min)
 	int i;
 	int index;
 
-	*min = stack[0];
+	*min	= stack[0];
+	index 	= 0;
 	i = 1;
 	while (i < size)
 	{
@@ -84,7 +85,7 @@ void		free_b(t_push *var)
 
 void		algo_under10(t_push *var)
 {
-	int	i;
+	//int	i;
 	int p;
 	int min;
 	int len;
@@ -92,7 +93,7 @@ void		algo_under10(t_push *var)
 
 	while (var->stack_a.size > 3)
 	{
-		i = 0;
+		//i = 0;
 		p = var->stack_a.size / 2;
 		min_index = get_min_num(var->stack_a.size, var->stack_a.stack, &min);
 		if (min_index > p)
