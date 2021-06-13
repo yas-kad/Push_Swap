@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   check_double.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 21:16:24 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/08 15:15:47 by yait-kad         ###   ########.fr       */
+/*   Created: 2021/06/12 18:15:50 by yait-kad          #+#    #+#             */
+/*   Updated: 2021/06/12 18:15:54 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-int	ft_isalpha(int c)
+int	before(char **argv, char *str, int size)
 {
-	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (argv[i] && i < size)
+	{
+		if (!ft_strcmp(argv[i], str))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	check_double(char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+	{
+		if (!before(argv, argv[i], i))
+			put_err_and_exit();
+		i++;
+	}
+	return (1);
 }

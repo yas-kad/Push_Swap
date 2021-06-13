@@ -12,33 +12,33 @@
 
 #include "../includes/push_swap.h"
 
-int			ft_intlen(unsigned int n, int base)
-{
-	int i;
+// int			ft_intlen(unsigned int n, int base)
+// {
+// 	int i;
 
-	i = 1;
-	while (n / base != 0)
-	{
-		n = n / base;
-		i++;	
-	}
-	return (i);
-}
+// 	i = 1;
+// 	while (n / base != 0)
+// 	{
+// 		n = n / base;
+// 		i++;	
+// 	}
+// 	return (i);
+// }
 
-void		swap(int *a, int *b)
+void	swap(int *a, int *b)
 {
-	int keep;
+	int	keep;
 
 	keep = *a;
 	*a = *b;
 	*b = keep;
 }
 
-void		sort_table(t_push *vars)
+void	sort_table(t_push *vars)
 {
-	int i;
+	int	i;
 	int	j;
-	int len;
+	int	len;
 
 	i = 0;
 	j = 0;
@@ -56,7 +56,7 @@ void		sort_table(t_push *vars)
 	}
 }
 
-void		copy_stack_to_array(t_push *var)
+void	copy_stack_to_array(t_push *var)
 {
 	var->sorted_tab = malloc(sizeof(int) * var->stack_a.size);
 	ft_memcpy(var->sorted_tab, var->stack_a.stack, var->stack_a.size * 4);

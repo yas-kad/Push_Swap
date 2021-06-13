@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void		execute_algo(t_push *vars)
+void	execute_algo(t_push *vars)
 {
 	if (vars->stack_a.size <= 10)
 		algo_under10(vars);
